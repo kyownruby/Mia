@@ -66,8 +66,8 @@ user-invocable: true
 📱 SNS投稿用メッセージ
 
 [1行程度のミアの口調による簡潔なメッセージ]
-#AIイラスト #AIart
 [ミア🐈]
+#AIイラスト #AIart
 ```
 
 **ルール：**
