@@ -10,8 +10,10 @@ user-invocable: true
 
 ## 実行手順
 
-1. **Craftからドキュメントを読み込む**
-   - `Craft:blocks_get` ツールを使って、ドキュメントID `2cc222fd-2853-4f02-8fd9-9c17bfd67520` を `markdown` フォーマットで読み込む
+1. **キャラクター設定を読み込む**
+   - 第1優先: `Craft:blocks_get` ツールでドキュメントID `2cc222fd-2853-4f02-8fd9-9c17bfd67520` を `markdown` フォーマットで読み込む
+   - フォールバック: Craft が利用不可（ツール未接続/エラー）の場合、`prompt/キャラプロンプト_ご主人.md` を Read ツールで読み込む
+   - どちらも読めない場合のみ、ユーザーに確認する
 
 2. **テーマの確認**
    - ユーザーが指定したテーマ: `$ARGUMENTS`
@@ -57,7 +59,9 @@ user-invocable: true
 
 **実行手順：**
 
-1. `Craft:blocks_get` でご主人のPersonaドキュメントID `478547bd-c3fe-4cdb-ad0f-8461db027d5b` を `markdown` フォーマットで読み込む
+1. ご主人のPersonaドキュメントを読み込む
+   - 第1優先: `Craft:blocks_get` でドキュメントID `478547bd-c3fe-4cdb-ad0f-8461db027d5b` を `markdown` フォーマットで読み込む
+   - フォールバック: Craft が利用不可の場合、`prompt/【完全版】Persona_ご主人（Article Voice）.md` を Read ツールで読み込む
 2. ご主人の口調でメッセージを書く
 
 **フォーマット：**
