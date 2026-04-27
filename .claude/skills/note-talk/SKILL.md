@@ -18,17 +18,25 @@ user-invocable: true
 
 ## 実行手順
 
-### Step 1: Craftからドキュメントを読み込む
+### Step 1: キャラ設定ドキュメントを読み込む
 
-以下の3ドキュメントを `Craft:blocks_get` で `markdown` フォーマットで読み込む：
+以下の3ドキュメントを読み込む。各ドキュメントは「第1優先: Craft、フォールバック: ローカルファイル」の順で取得する：
 
-1. **キャラの関係性（対話形式用）**：`bcdf3e5a-f52d-e603-607a-01f59bfec96e`
+1. **キャラの関係性（対話形式用）**
+   - 第1優先: `Craft:blocks_get` で ID `bcdf3e5a-f52d-e603-607a-01f59bfec96e` を `markdown` フォーマットで読み込む
+   - フォールバック: Craft が利用不可（ツール未接続/エラー）の場合、Read ツールで `prompt/キャラの関係性（対話形式用）.md` を読み込む
    - 口調・セリフ例・会話の雰囲気を確認する
    - ⚠️ 対話形式では**このドキュメントを最優先**とする
-2. **Persona_ご主人**：`478547bd-c3fe-4cdb-ad0f-8461db027d5b`
+2. **Persona_ご主人**
+   - 第1優先: `Craft:blocks_get` で ID `478547bd-c3fe-4cdb-ad0f-8461db027d5b` を読み込む
+   - フォールバック: Read ツールで `prompt/【完全版】Persona_ご主人（Article Voice）.md` を読み込む
    - ご主人の内面・思考展開・価値観を参照する
-3. **Persona_ミア**：`a8941d47-a1a2-4e8a-bd76-b16dd71d470c`
+3. **Persona_ミア**
+   - 第1優先: `Craft:blocks_get` で ID `a8941d47-a1a2-4e8a-bd76-b16dd71d470c` を読み込む
+   - フォールバック: Read ツールで `prompt/Persona_ ミア（Mia）.md` を読み込む
    - ミアの性格・行動方針を参照する
+
+どのドキュメントも読めない場合のみ、ユーザーに確認する。
 
 ### Step 2: テーマと文字数を確認する
 

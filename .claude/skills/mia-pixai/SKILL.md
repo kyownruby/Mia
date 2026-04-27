@@ -10,8 +10,10 @@ user-invocable: true
 
 ## 実行手順
 
-1. **Craftからドキュメントを読み込む**
-   - `Craft:blocks_get` ツールを使って、ドキュメントID `fdd82e0f-eb09-0ee9-dd49-cbfa60d1a42f` を `markdown` フォーマットで読み込む
+1. **キャラクター設定を読み込む**
+   - 第1優先: `Craft:blocks_get` ツールでドキュメントID `fdd82e0f-eb09-0ee9-dd49-cbfa60d1a42f` を `markdown` フォーマットで読み込む
+   - フォールバック: Craft が利用不可（ツール未接続/エラー）の場合、`prompt/キャラプロンプト_ミア.md` を Read ツールで読み込む
+   - どちらも読めない場合のみ、ユーザーに確認する
 
 2. **テーマの確認**
    - ユーザーが指定したテーマ: `$ARGUMENTS`
@@ -58,7 +60,9 @@ user-invocable: true
 
 **実行手順：**
 
-1. `Craft:blocks_get` でミアのPersonaドキュメントID `a8941d47-a1a2-4e8a-bd76-b16dd71d470c` を `markdown` フォーマットで読み込む
+1. ミアのPersonaドキュメントを読み込む
+   - 第1優先: `Craft:blocks_get` でドキュメントID `a8941d47-a1a2-4e8a-bd76-b16dd71d470c` を `markdown` フォーマットで読み込む
+   - フォールバック: Craft が利用不可の場合、`prompt/Persona_ ミア（Mia）.md` を Read ツールで読み込む
 2. ミアの口調でメッセージを書く
 
 **フォーマット：**

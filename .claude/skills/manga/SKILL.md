@@ -23,10 +23,18 @@ user-invocable: true
 - 引数 `$ARGUMENTS` に `🌸：` または `🐈：`（半角コロン `:` 含む）が含まれている場合は **対話モード**
 - それ以外は **テーマモード**（従来の動作）
 
-### Step 2-A: 【テーマモード】Craftからキャラクター情報を読み込む
+### Step 2-A: 【テーマモード】キャラクター情報を読み込む
 
-- ご主人: `Craft:blocks_get` でドキュメントID `2cc222fd-2853-4f02-8fd9-9c17bfd67520` を `markdown` で読み込む
-- ミア: `Craft:blocks_get` でドキュメントID `fdd82e0f-eb09-0ee9-dd49-cbfa60d1a42f` を `markdown` で読み込む
+各キャラのキャラプロンプトを以下の優先順位で取得する：
+
+- ご主人
+  - 第1優先: `Craft:blocks_get` でドキュメントID `2cc222fd-2853-4f02-8fd9-9c17bfd67520` を `markdown` で読み込む
+  - フォールバック: Craft が利用不可（ツール未接続/エラー）の場合、Read ツールで `prompt/キャラプロンプト_ご主人.md` を読み込む
+- ミア
+  - 第1優先: `Craft:blocks_get` でドキュメントID `fdd82e0f-eb09-0ee9-dd49-cbfa60d1a42f` を `markdown` で読み込む
+  - フォールバック: Read ツールで `prompt/キャラプロンプト_ミア.md` を読み込む
+
+どちらも読めない場合のみ、ユーザーに確認する。
 
 ### Step 2-B: 【対話モード】対話を解析する
 
