@@ -108,9 +108,16 @@ PRの説明には必ず以下を含める：
 
 ## 🛠️ スキル作成ルール
 
-- 新しくスキルを作成する場合は、グローバルの `~/.claude/skills/` とプロジェクトの `.claude/skills/` の両方に作成する
-- グローバル側：どのプロジェクト・セッションからでもスキルが利用可能になる
-- プロジェクト側：リポジトリに含まれ、GitHubで共有・管理できる
+新しくスキルを作成する場合は、以下の2か所に同じ内容を配置する：
+
+- **プロジェクト**: `.claude/skills/<skill-name>/SKILL.md` — リポジトリで共有・管理
+- **グローバル**: `~/.claude/skills/<skill-name>/SKILL.md` — どのプロジェクトからでも利用可能
+
+### ⚠️ HOME 環境の確認
+
+- Claude Code on the web 環境では `HOME=/root` のため、`~/.claude/skills/` の実体は `/root/.claude/skills/`
+- スキル作成後は必ず `ls /root/.claude/skills/<skill-name>/SKILL.md` で配置を確認する
+- `/home/user/.claude/skills/` は `~` ではないので注意（似たパスだけど別物）
 
 ## 🔍 リサーチルール
 
