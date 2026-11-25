@@ -395,7 +395,7 @@ Threadsフォロワー2.2万人
 
 未確認のもの（URLのみ記録。開いて見ていない）:
 
-- note最初の記事「夏の夜祭」の見出し画像: None
+- note最初の記事「夏の夜祭」の本文の画像（見出し画像は設定なし）: https://assets.st-note.com/img/1690961827356-rKAZYxAvZq.png
 - 「リンファ作:かわいい猫のキャラクター」が載っている記事の見出し画像: https://assets.st-note.com/production/uploads/images/312169444/rectangle_large_type_2_6c7952dc56a53f2077317940b656dca4.png?fit=bounds&quality=85&width=1280
 - 固定記事の見出し画像: https://assets.st-note.com/production/uploads/images/337192069/rectangle_large_type_2_96ad7292ddca797971ee2168a162489d.png?fit=bounds&quality=85&width=1280
 - フォロー時メッセージの画像: https://assets.st-note.com/production/uploads/images/205159644/a421ad1a5fb4c2ae5ea183bfdcbd2d39.jpg?fit=bounds&format=jpeg&height=500&quality=85&width=500
